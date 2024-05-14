@@ -1,0 +1,44 @@
+//
+API REST -> usa verbos (GET, POST, PUT, DELETE) -> obter info, adicionar info, alterar, eliminar
+todos os trabalhos vao ter uma API REST
+
+/users -> dataset
+    GET /users -> listagem
+    GET /users/chave -> objeto especifico
+    POST /users -> inserção (falta a informação) -> a informação vai codificada no body (mais tarde)
+    PUT /users/chave -> alteração (também leva a informação no body)
+    DELETE /users/chave -> elimina (não existe por defeito uma operação para eliminar a coleção toda, mas pode ser implementada)
+na metodologia REST, pedidos orientados (devolve sempre em JSON)
+
+O nosso serviço vai SEMPRE pedir as informações ao json
+
+Pedidos AJAX:
+rotas -> indicações de pedidos
+                    quando o servidor receber resposta da rota vai executar o then
+    axios.get('rota').then(resp =>{ // quando se usa o axios, o que se retorna é o objeto
+        data = resp.data; //é onde estão os dados
+        data.forEach (a =>)
+    })
+    .catch(error => { //vê se houve algum erro
+            console.log(error);
+    })
+
+
+
+
+//TPC 3
+    filme
+        cast*
+        genre*
+        title
+        year
+repfichasjcr/filmes -> vai tar na blackboard
+1. Análise do datacet e criação de BD em json.server
+2. Serviço que responde na porta (que quisermos) às seguintes rotas:
+    -GET 
+        /filmes -> listagem de filmes (cada entrada é lida para a página de filmes) (é o índice basicamente)
+        /filmes/id_filme -> quando se escolhe um filme cria a página
+        /generos
+        /generos/id_genero
+        /atores
+        /atores/id_ator
